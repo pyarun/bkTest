@@ -1,0 +1,10 @@
+{
+  "python.pythonPath": "/home/user/.pyenv/versions/bk/bin/python",
+  "python.formatting.provider": "black",
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/src/"
+  ],
+  "python.linting.enabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pep8Enabled": false
+}
