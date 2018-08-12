@@ -11,7 +11,8 @@ class VgSaleSerializer(DocumentSerializer):
 
 
 class GameFeaturesSerializer(DocumentSerializer):
-    releasedate = serializers.DateField(
+    releasedate = serializers.DateTimeField(
+        format="%b %d %Y",
         input_formats=[
             "%b %d %Y",
             "%b %Y",
