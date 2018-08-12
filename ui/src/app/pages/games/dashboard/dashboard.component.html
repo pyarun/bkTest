@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-end">
+  <button class="btn-primary btn" outline [nbPopover]="template" nbPopoverPlacement="bottom">
+    Widgets
+  </button>
+</div>
+
+<ng-template #template let-text="text">
+  <nb-card class="popover-card m-0">
+    <nb-card-body class="p-0">
+      <div class="list-group">
+        <ng-container *ngFor="let graph of popWidgetList(widgets)">
+          <button type="button" class="list-group-item list-group-item-action" [ngClass]="{'active': graph.visible}" (click)="addWidget(graph)">{{graph.name}}</button>
+        </ng-container>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</ng-template>
+
+<dashboard>
+
+  <!-- <widget *ngFor="let item of activeWidgets; let i = index;" [widgetId]="i" class="handle">
+    <div class="head">Widget {{i}} [1, 1]</div>
+    <div class="close" (click)="close($event, i)">X</div>
+  </widget> -->
+
+</dashboard>
+<!-- 
+<div class="row no-gutters">
+
+  <div [ngClass]="widgets.gamesByGenre.expandClass" *ngIf="widgets.gamesByGenre.visible">
+    <widgets-genre-pie></widgets-genre-pie>
+  </div>
+  <div [ngClass]="widgets.salesByGenre.expandClass" *ngIf="widgets.salesByGenre.visible">
+    <widget-salesby-genre></widget-salesby-genre>
+  </div>
+  <div [ngClass]="widgets.salesByRegion.expandClass" (onExpand)="widgets.salesByRegion.expandClass=$event" *ngIf="widgets.salesByRegion.visible">
+    <widgets-sales-by-region></widgets-sales-by-region>
+  </div>
+  <div [ngClass]="widgets.gamesByYear.expandClass" (onExpand)="widgets.gamesByYear.expandClass=$event" *ngIf="widgets.gamesByYear.visible">
+    <widgets-release-count-by-year></widgets-release-count-by-year>
+  </div>
+  <div [ngClass]="widgets.priceVsUsers.expandClass" (onExpand)="widgets.priceVsUsers.expandClass=$event" *ngIf="widgets.priceVsUsers.visible">
+    <widget-users-vs-price></widget-users-vs-price>
+  </div>
+  <div [ngClass]="widgets.gamesByAgeGroup.expandClass" (onExpand)="widgets.gamesByAgeGroup.expandClass=$event" *ngIf="widgets.gamesByAgeGroup.visible">
+    <widgets-games-by-age></widgets-games-by-age>
+  </div>
+  <div [ngClass]="widgets.singleMultiPlayer.expandClass" *ngIf="widgets.singleMultiPlayer.visible">
+    <widget-single-multi-player></widget-single-multi-player>
+  </div>
+  <div [ngClass]="widgets.freeVsPaid.expandClass" *ngIf="widgets.freeVsPaid.visible">
+    <widget-free-vs-paid></widget-free-vs-paid>
+  </div>
+
+
+</div> -->

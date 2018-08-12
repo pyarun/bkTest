@@ -1,0 +1,25 @@
+<nb-card>
+  <nb-card-header class="d-flex justify-content-between">
+    <div>Single, Multi Player</div>
+
+
+  </nb-card-header>
+  <nb-card-body class="bg-light">
+    <div class="row">
+      <div class="col">
+
+        <nvd3 [options]="options" [data]="dataGameCount"></nvd3>
+
+        <h4 class="text-center title">Ratio of Number of Games</h4>
+        <div></div>
+      </div>
+
+      <div class="col">
+
+        <nvd3 [options]="options" [data]="dataPlayerCount"></nvd3>
+        <h4 class="text-center title">Ratio of Number of Owners</h4>
+        <div></div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

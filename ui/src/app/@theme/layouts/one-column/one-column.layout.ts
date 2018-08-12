@@ -21,13 +21,10 @@ import { takeWhile } from 'rxjs/operators/takeWhile';
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
-      <nb-layout-column>
+      <nb-layout-column class="p-2">
         <ng-content select="router-outlet"></ng-content>
       </nb-layout-column>
 
-      <nb-layout-footer fixed>
-        <ngx-footer></ngx-footer>
-      </nb-layout-footer>
     </nb-layout>
   `,
 })
@@ -42,7 +39,7 @@ export class OneColumnLayoutComponent implements OnDestroy {
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
         this.currentTheme = theme.name;
-    });
+      });
   }
 
   ngOnDestroy() {

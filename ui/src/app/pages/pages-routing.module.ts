@@ -3,21 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { routes as GameRoutes } from './games/games-routing.module';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [
-    {
-      path: 'dashboard',
-      component: DashboardComponent,
-    },
-    {
-      path: '',
-      redirectTo: 'dashboard',
-      pathMatch: 'full',
-    },
-  ],
+  children: GameRoutes
 }];
 
 @NgModule({
