@@ -142,7 +142,12 @@ class Reports(object):
                 }
             }
         )
-        return list(queryset.aggregate(*pipeline))[0]
+        dataset = list(queryset.aggregate(*pipeline))
+        if len(dataset):
+            dataset = dataset[0]
+        else:
+            dataset ={}
+        return dataset
 
     def price_vs_users(self):
         """
